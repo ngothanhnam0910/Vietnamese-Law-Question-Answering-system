@@ -16,8 +16,6 @@ In this project, I build a complete Q&A chatbot related to Vietnamese's legal do
         * [RAG flow answering](#rag-flow-answering)
         * [Finetune rerank model](#finetune-rerank-model)
         * [Finetune LLM for answer generation](#finetune-LLM)
-        * [Evaluate](#evaluate)
-        * [Further improvement](#further-improvement)
    * [Demo](#demo)
 <!--te-->
 
