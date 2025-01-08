@@ -1,0 +1,27 @@
+NCCL_P2P_DISABLE=1 NCCL_IB_DISABLE=1 CUDA_VISIBLE_DEVICES=0 torchrun --nproc_per_node 1 --master_port 29502\
+	-m FlagEmbedding.finetune.reranker.encoder_only.base \
+	--model_name_or_path BAAI/bge-reranker-v2-m3 \
+    --train_data /retrieval/data/rerank/data_reranking.json \
+    --cache_path data_for_finetune \
+    --train_group_size 8 \
+    --query_max_len 128 \
+    --passage_max_len 400 \
+    --pad_to_multiple_of 8 \
+    --knowledge_distillation False \
+	--output_dir output_folder \
+    --bge_m3_v2_with_random \
+    --overwrite_output_dir \
+    --learning_rate 1e-5 \
+    --fp16 \
+    --num_train_epochs 6 \
+    --per_device_train_batch_size 2 \
+    --gradient_accumulation_steps 2 \
+    --dataloader_drop_last True \
+    --warmup_ratio 0.1 \
+    --gradient_checkpointing \
+    --weight_decay 0.01 \
+    --deepspeed ds_stage0.json \
+    --logging_steps 29000 \
+    --save_steps 29000 \
+    --save_total_limit 8
+```
