@@ -2,6 +2,8 @@
 # LLM chat bot - Vietnamese Q&A System in Vietnamese's legal document 
 In this project, I build a complete Q&A chatbot related to Vietnamese's legal document
 
+Link dataset : [Link data](https://drive.google.com/drive/folders/1HyF8-EfL4w0G3spBbhcc0jTOqdc4XUhB)
+
 # Table of content
 
 <!--ts-->
@@ -31,7 +33,7 @@ In this project, I build a complete Q&A chatbot related to Vietnamese's legal do
 │   │   │   ├── search_elastic.py              # Search using elasticsearch
 │   │   │   ├── search_with_bge.py             # Search using Bge-m3
 │   │   │   └── search_with_e5.py              # Search using Multilingual-e5-large
-│   │   ├── app.py                              # experiment react agent with tool search
+│   │   ├── agent.py                            # experiment react agent with tool search
 │   │   ├── app.py                              # Entry point for the Fast API backend application
 │   │   ├── brain.py                            # Logic for intelligent decision-making using OpenAI client
 │   │   ├── cache.py                            # Cache implementation for the application
@@ -42,8 +44,7 @@ In this project, I build a complete Q&A chatbot related to Vietnamese's legal do
 │   │   ├── tavily_search.py                    # define tool search internet
 │   │   ├── schemas.py                          # Data schemas for API endpoints
 │   │   ├── task.py                             # Define task for celery
-│   │   └── utils.py                            # Utility functions for the backend
-│   └── test                                    # Test cases for the backend                   
+│   │   └── utils.py                            # Utility functions for the backend                  
 ├── chatbot-ui                                  # Frontend chatbot application
 │   ├── chat_interface.py                       # Chatbot interface logic
 │   ├── config.toml                             # Configuration file forchatbot                  
@@ -77,7 +78,7 @@ source .venv/bin/activate
 pip install -r backend/requirements.txt
 pip install -r chatbot-ui/requirements.txt
 ```
-Start application on docker container.
+Start application .
 ```bash
 sh backend/entrypoint.sh
 sh chatbot-ui/entrypoint.sh
